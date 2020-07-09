@@ -39,10 +39,13 @@
         </div>
         <div class="card-section overflow-auto" style="height: 300px" >
             <div class="card" v-for="user in users" v-bind:Key="user.id">
-                <h5 class="card-body">{{ user.name }}</h5>
-                <p class="card-body">{{ user.username }}</p>
-                <p class="card-body">{{ user.email }}</p>
-                <p class="card-body">{{ user.address.street }}</p>
+                <div class="card-body">
+                    <h4>{{ user.name }}</h4>
+                    <p><strong>{{ user.username }}</strong></p>
+                    <p>{{ user.email }}</p>
+                    <p>{{ user.address.street }}, {{ user.address.suite }} {{ user.address.city }}, {{ user.address.zipcode }}</p>
+                    <p>{{ user.address.geo.lat }}, {{ user.address.geo.lng }}</p>
+                </div>
             </div>
         </div>
     </div>    
@@ -98,32 +101,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.card-title {
-    background-color: #c7c7c7;
-    padding: 15px;
-    margin-bottom: 0;
-}
-
-.card-body {
-    padding: 15px;
-}
-
-.card-section {
-    border: 1px solid #c0c0c0;
-    margin: 5px;
-} 
-
-@media (min-width: 768px) {  
-    .card-columns {column-count: 3;}
-}
-
-@media (min-width: 992px) { 
-    .card-columns {column-count: 3;}
-}
-
-@media (min-width: 1200px) {  
-    .card-columns {column-count: 3;} 
-}
-</style>

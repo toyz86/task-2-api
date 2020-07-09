@@ -1,0 +1,32 @@
+.card-title {
+  background-color: #c7c7c7;
+  padding: 15px;
+  margin-bottom: 0;
+}
+
+.card-body {
+  padding: 15px;
+}
+
+.card-section {
+  border: 1px solid #c0c0c0;
+  margin: 5px;
+}
+
+@media (min-width: 768px) {
+  .card-columns {
+    column-count: 3;
+  }
+}
+
+@media (min-width: 992px) {
+  .card-columns {
+    column-count: 3;
+  }
+}
+
+@media (min-width: 1200px) {
+  .card-columns {
+    column-count: 3;
+  }
+}

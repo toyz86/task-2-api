@@ -15,9 +15,19 @@ module.exports = {
         rel: 'stylesheet',
         type: 'text/css',
         href: 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-alpha1/css/bootstrap.min.css'
-      }
-    ]
+      },
+      {
+        rel: 'stylesheet',
+        type: 'text/css',
+        href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css',
+      },      
+      
+    ],
   },
+  css: [{
+    src: '~/assets/scss/main.scss',
+    lang: 'scss'
+  }],
 
   /*
   ** Customize the progress bar color
