@@ -32,15 +32,12 @@ module.exports = {
   /*
   ** Customize the progress bar color
   */
-  loading: { 
-    color: '#3B8070',
-    continuous: true,
-  },
-  loadingIndicator: {
-    name: 'circle',
-    color: '#3B8070',
-    background: 'white'
-  },
+  // loading: { 
+  //   color: '#3B8070',
+  //   continuous: true,
+  // },
+  loading: '~/components/loading.vue',
+
   /*
   ** Build configuration
   */

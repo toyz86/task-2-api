@@ -8,7 +8,7 @@
     
     <div class="main-page d-flex">
       <div class="nav-bar">
-        <nuxt-link to="/load-api" class="nav-link">Go to Data</nuxt-link>
+        <button class="btn btn-primary btn-more" @click="loadData">Open Data</button>
       </div>
     </div>
   </section>
@@ -21,5 +21,10 @@ export default {
 
     }
   },
+  methods: {
+    loadData(){
+      this.$router.push({ 'path': '/load-api' })
+    }
+  }
 }
 </script>
