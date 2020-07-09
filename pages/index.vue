@@ -6,8 +6,8 @@
     <div id="frame-bottom"></div>
     <div id="frame-left"></div>
     
-    <div class="main-page">
-      <div class="nav-bar d-flex justify-content-center mt-4">
+    <div class="main-page d-flex">
+      <div class="nav-bar">
         <nuxt-link to="/load-api" class="nav-link">Go to Data</nuxt-link>
       </div>
     </div>
@@ -35,7 +35,7 @@ export default {
     background-size: cover;
     height: 100vh;
   }
-    h1 {
+  h1 {
     color: cornsilk;
   }
   span {
@@ -48,27 +48,27 @@ export default {
     #frame-left, #frame-right {
       top: 0; bottom: 0;
       width: 18px;
-      }
-      #frame-left { left: 0; }
-      #frame-right { right: 0; }
+    }
+    #frame-left { left: 0; }
+    #frame-right { right: 0; }
       
     #frame-top, #frame-bottom {
       left: 0; right: 0;
       height: 18px;
-      }
+    }
       #frame-top { top: 0; }
       #frame-bottom { bottom: 0; }
-  p {
-    color: #ccc;
-  }
+    p {
+      color: #ccc;
+    }
 
-  .portfolio {
-    margin-top: -130px;
-    padding: 0px 50px 0px 50px;
-  }
+    .portfolio {
+      margin-top: -130px;
+      padding: 0px 50px 0px 50px;
+    }
 
-.nav-link {
-      float: left;
+    .nav-link {
+      /* float: left; */
       font-size: 30px;
       border: 1px solid rgb(77, 83, 84);
       text-decoration: none;
@@ -81,9 +81,9 @@ export default {
       align-items: center;
       cursor: pointer;
     }
-  .nav-link:hover {
-        background-color: #47c9e5;
-        color: black;    
-  }
+    .nav-link:hover {
+      background-color: #47c9e5;
+      color: black;    
+    }
   
 </style>

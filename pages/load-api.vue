@@ -23,20 +23,26 @@
     </div>
     <div class="d-flex">
         <div class="card-section overflow-auto" style="height: 300px" >
-            <div class="card" v-for="photo in photos" v-bind:Key="photo.id">
-                <h4 class="card-title">{{ photo.title }}</h4>
-                <p class="card-body">{{ photo.body }}</p>
+            <div class="card p-2" v-for="photo in photos" v-bind:Key="photo.id">
+                <div class="d-flex mb-2">
+                    <img :src="photo.thumbnailUrl">
+                    <h4 class="card-title">{{ photo.title }}</h4>
+                </div>
+                <img class="mb-2" :src="photo.url">
             </div>
         </div>
         <div class="card-section overflow-auto" style="height: 300px" >
             <div class="card" v-for="todo in todos" v-bind:Key="todo.id">
-                <h4 class="card-title">{{ todo.name }}</h4>
-                <p class="card-body">{{ todo.body }}</p>
+                <h4 class="card-title">{{ todo.title }}</h4>
+                <p class="card-body">{{ todo.completed }}</p>
             </div>
         </div>
         <div class="card-section overflow-auto" style="height: 300px" >
             <div class="card" v-for="user in users" v-bind:Key="user.id">
-                <span class="card-body">{{ user.title }}</span>
+                <h5 class="card-body">{{ user.name }}</h5>
+                <p class="card-body">{{ user.username }}</p>
+                <p class="card-body">{{ user.email }}</p>
+                <p class="card-body">{{ user.address.street }}</p>
             </div>
         </div>
     </div>    
@@ -53,9 +59,9 @@ const reqThree = axios.get("https://jsonplaceholder.typicode.com/albums");
 const reqFour = axios.get("https://jsonplaceholder.typicode.com/photos");
 const reqFive = axios.get("https://jsonplaceholder.typicode.com/todos");
 const reqSix = axios.get("https://jsonplaceholder.typicode.com/users");
-console.log('ini data posts', reqOne);
-console.log('ini data comment', reqTwo);
-console.log('ini data albums', reqThree);
+// console.log('ini data posts', reqOne);
+// console.log('ini data comment', reqTwo);
+// console.log('ini data albums', reqThree);
 
 export default {
     data () {
