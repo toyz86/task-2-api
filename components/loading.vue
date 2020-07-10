@@ -1,6 +1,10 @@
 <template>
-  <div v-if="loading" class="loading-page">
-    <p>Loading...</p>
+  <div v-if="loading" class="site-nav-canvas d-flex">
+    <div class="spinner d-flex">
+      <div class="bounce1"></div>
+      <div class="bounce2"></div>
+      <div class="bounce3"></div>
+    </div>
   </div>
 </template>
 
@@ -21,16 +25,56 @@ export default {
 </script>
 
 <style scoped>
-.loading-page {
+.site-nav-canvas {
+  background-color: #47c9e5;
+  height: 100vh;
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.8);
+  right: 0;
+  bottom: 0;
+}
+.spinner {
+  margin: auto;
+  width: 70px;
   text-align: center;
-  padding-top: 200px;
-  font-size: 30px;
-  font-family: sans-serif;
+  justify-content: center;
+  align-items: center;  
+}
+
+.spinner > div {
+  width: 18px;
+  height: 18px;
+  background-color: #fff;
+
+  border-radius: 100%;
+  display: inline-block;
+  -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+  animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+}
+
+.spinner .bounce1 {
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+
+.spinner .bounce2 {
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+
+@-webkit-keyframes sk-bouncedelay {
+  0%, 80%, 100% { -webkit-transform: scale(0) }
+  40% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes sk-bouncedelay {
+  0%, 80%, 100% { 
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  } 40% { 
+    -webkit-transform: scale(1.0);
+    transform: scale(1.0);
+  }
 }
 </style>
