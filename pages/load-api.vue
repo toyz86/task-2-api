@@ -95,7 +95,9 @@ export default {
                 this.todos = responses[4].data;
                 this.users = responses[5].data;
                 this.$nuxt.$loading.finish();
-            }));
+            })).catch(error => {
+                console.error("errorrrrr",error)
+            }).finally(() => this.$loading = false)
         });
       }
   }
