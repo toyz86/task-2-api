@@ -1,32 +1,64 @@
 <template>
-  <div v-if="loading" class="site-nav-canvas d-flex">
-    <div class="spinner d-flex">
-      <div class="bounce1"></div>
-      <div class="bounce2"></div>
-      <div class="bounce3"></div>
+  <section v-if="loading">
+    <div class="site-nav-canvas d-flex">
+      <div class="spinner">
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
+        <h4 class="counter">{{ onLoaded }}</h4>
+      </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
 export default {
   data: () => ({
-    loading: false
+    loading: false,
+    interval: null,
+    loadingPercent: 0
   }),
+  created() {
+    let loadTime = this.loading = false;
+    this.countProgress();
+  },
   methods: {
     start () {
       this.loading = true
     },
     finish () {
       this.loading = false
+    },
+    countProgress() {
+      let step = this.loadTime / 100;
+      this.interval = setInterval(() => {
+        this.loadingPercent++
+      }, step);
     }
-  }
+  },
+  computed: {
+    onLoaded(){
+      return this.loadingPercent + '%'
+    }
+  },
+  watch: {
+    loadingPercent(val) {
+      if (val >= 100) {
+        console.log('data complete');
+        clearInterval(this.interval)
+      }
+    }
+  },
 }
 </script>
 
 <style scoped>
+.counter {
+  color: #fff
+}
 .site-nav-canvas {
   background-color: #47c9e5;
+  opacity: 0.7;
   height: 100vh;
   position: fixed;
   top: 0;

@@ -62,6 +62,7 @@ const reqThree = axios.get("https://jsonplaceholder.typicode.com/albums");
 const reqFour = axios.get("https://jsonplaceholder.typicode.com/photos");
 const reqFive = axios.get("https://jsonplaceholder.typicode.com/todos");
 const reqSix = axios.get("https://jsonplaceholder.typicode.com/users");
+const reqData = [reqOne, reqTwo, reqThree, reqFour, reqFive, reqSix];
 // console.log('ini data posts', reqOne);
 // console.log('ini data comment', reqTwo);
 // console.log('ini data albums', reqThree);
@@ -86,7 +87,7 @@ export default {
         this.$nextTick(() => {
             this.$nuxt.$loading.start();
             axios
-            .all([reqOne,reqTwo,reqThree,reqFour,reqFive,reqSix])
+            .all(reqData)
             .then(axios.spread((...responses) => {
                 this.posts = responses[0].data;
                 this.comments = responses[1].data;
@@ -96,8 +97,10 @@ export default {
                 this.users = responses[5].data;
                 this.$nuxt.$loading.finish();
             })).catch(error => {
-                console.error("errorrrrr",error)
-            }).finally(() => this.$loading = false)
+                this.$nuxt.$loading.finish();
+                console.error("Data tidak tersedia",error);
+                alert("Data tidak tersedia",error);
+            })
         });
       }
   }
