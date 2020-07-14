@@ -6,6 +6,7 @@
                 <h4 class="card-title">{{ post.title }}</h4>
                 <p class="card-body">{{ post.body }}</p>
             </div>
+            <!-- <button v-if="loadError" type="button" class="btn btn-info">Retry</button> -->
         </div>
         <div class="card-section overflow-auto" style="height: 300px" >
             <div class="card" v-for="comment in comments" v-bind:Key="comment.id">
@@ -63,9 +64,6 @@ const reqFour = axios.get("https://jsonplaceholder.typicode.com/photos");
 const reqFive = axios.get("https://jsonplaceholder.typicode.com/todos");
 const reqSix = axios.get("https://jsonplaceholder.typicode.com/users");
 const reqData = [reqOne, reqTwo, reqThree, reqFour, reqFive, reqSix];
-// console.log('ini data posts', reqOne);
-// console.log('ini data comment', reqTwo);
-// console.log('ini data albums', reqThree);
 
 export default {
     data () {

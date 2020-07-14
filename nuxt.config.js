@@ -28,7 +28,10 @@ module.exports = {
     src: '~/assets/scss/main.scss',
     lang: 'scss'
   }],
-
+  plugins: [{
+    src: '~plugins/ellipseProgress.js',
+    ssr: false,
+  }],
   /*
   ** Customize the progress bar color
   */

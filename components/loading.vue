@@ -16,11 +16,11 @@ export default {
   data: () => ({
     loading: false,
     interval: null,
-    loadingPercent: 0
+    loadingPercent: 0,
+    loadTime: 0
   }),
   created() {
-    let loadTime = this.loading = false;
-    this.countProgress();
+      this.countProgress();
   },
   methods: {
     start () {
